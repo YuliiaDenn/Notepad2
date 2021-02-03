@@ -37,4 +37,9 @@ public class Notepad {
 	public List<User> chooseRecordsBySurname(String surname) {
 		return record.getBySurname(surname);
 	}
+	
+	public void update(User user) {
+		record.update(user);
+	}
+	
 }

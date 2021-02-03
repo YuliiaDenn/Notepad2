@@ -1,13 +1,17 @@
 package entity;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-@Entity
+@Entity(name = "User")
 @Table(name = "list_users")
 
 public class User {
@@ -16,15 +20,18 @@ public class User {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 
 	@Column(name = "id")
-	int id;
+	private int id;
 	@Column(name = "surname")
-	String surname;
+	private String surname;
 	@Column(name = "name")
-	String name;
-	@Column(name = "secondName")
-	String secondName;
-	@Column(name = "phoneNumber")
-	String phoneNumber;
+	private String name;
+	@Column(name = "second_name")
+	private String secondName;
+	@Column(name = "phone_number")
+	private String phoneNumber;
+	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@JoinColumn(name = "address_id")
+	private Address address;
 
 	public User() {
 		super();
@@ -87,6 +94,14 @@ public class User {
 		this.phoneNumber = phoneNumber;
 	}
 
+	public Address getAddress() {
+		return address;
+	}
+
+	public void setAddress(Address address) {
+		this.address = address;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -136,7 +151,7 @@ public class User {
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", surname=" + surname + ", name=" + name + ", secondName=" + secondName
-				+ ", phoneNumber=" + phoneNumber + "]";
+				+ ", phoneNumber=" + phoneNumber + ", address=" + address + "]";
 	}
 
 }
