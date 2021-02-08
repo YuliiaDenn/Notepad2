@@ -9,19 +9,18 @@
 <title>All users by name</title>
 </head>
 <body>
-<h2>All users by name!</h2>
+	<h2>All users by name!</h2>
 	<form action="ListByNameServlet" method="post">
 
-		<label>Name: <input type="text" name="name"><br />
-		</label> 
-		<label><input type="submit" /></label>
+		<label>Name: <input type="text" name="name">
+		</label> <label><input type="submit" value="request" /></label>
 
 	</form>
-<c:if test="${listByName != null}">
-     <c:redirect url="/listByNameResult.jsp" />
-</c:if>
+	<c:if test="${listByName != null}">
+		<c:redirect url="/listByNameResult.jsp" />
+	</c:if>
 
-<br />
+	<br />
 	<form action="/webNotebook2/StartServlet">
 		<button type="submit">Start page</button>
 	</form>

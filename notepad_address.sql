@@ -28,7 +28,7 @@ CREATE TABLE `address` (
   `street` varchar(45) DEFAULT NULL,
   `building_number` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -37,7 +37,7 @@ CREATE TABLE `address` (
 
 LOCK TABLES `address` WRITE;
 /*!40000 ALTER TABLE `address` DISABLE KEYS */;
-INSERT INTO `address` VALUES (1,'ivankiv','kyivska','22'),(2,'ivankiv','bbb','23'),(3,'ivankiv','bbb','23'),(4,'ivankiv','blablabla','1');
+INSERT INTO `address` VALUES (1,'ivankiv','kyivska','22'),(2,'ivankiv','mira','23'),(3,'ivankiv','bbb','23'),(4,'ivankiv','blablabla','1'),(5,'one','one','one'),(7,'two','one','one'),(8,'two','two','two'),(9,'two','two','two'),(10,'two','two','two'),(11,'Ivankiv','Myru','1'),(12,'ivankiv','myru','2'),(13,'ivaniv','myru','3');
 /*!40000 ALTER TABLE `address` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -50,4 +50,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-02-03 16:47:52
+-- Dump completed on 2021-02-08 18:04:56

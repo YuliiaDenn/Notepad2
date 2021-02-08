@@ -2,44 +2,47 @@ package service;
 
 import java.util.List;
 
+import dao.AddressDao;
+import dao.AddressDaoImpl;
 import dao.UserDao;
 import dao.UserDaoImpl;
+import entity.Address;
 import entity.User;
 
 public class Notepad {
 
-	UserDao record = new UserDaoImpl();
+	UserDao recordUser = new UserDaoImpl();
 
 	public void addRecord(User user) {
-		record.add(user);
+		recordUser.add(user);
 	}
 
 	public void changeRecord(User user) {
-		record.update(user);
+		recordUser.update(user);
 	}
 
 	public void deleteRecord(int id) {
-		record.delete(id);
+		recordUser.delete(id);
 	}
 
 	public User chooseRecordById(int id) {
-		return record.getById(id);
+		return recordUser.getById(id);
 	}
 
 	public List<User> chooseAllRecords() {
-		return record.getAll();
+		return recordUser.getAll();
 	}
 
 	public List<User> chooseRecordsByName(String name) {
-		return record.getByName(name);
+		return recordUser.getByName(name);
 	}
 
 	public List<User> chooseRecordsBySurname(String surname) {
-		return record.getBySurname(surname);
+		return recordUser.getBySurname(surname);
 	}
-	
+
 	public void update(User user) {
-		record.update(user);
+		recordUser.update(user);
 	}
-	
+
 }

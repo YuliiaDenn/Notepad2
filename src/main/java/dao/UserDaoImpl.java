@@ -59,7 +59,7 @@ public class UserDaoImpl implements UserDao {
 
 		Session session = sessionFactory.getCurrentSession();
 		Transaction transaction = session.beginTransaction();
-		List<User> users = session.createQuery("from User").getResultList();
+		List<User> users = session.createQuery("from User", User.class).getResultList();
 		transaction.commit();
 		session.close();
 		return users;
@@ -70,7 +70,7 @@ public class UserDaoImpl implements UserDao {
 
 		Session session = sessionFactory.getCurrentSession();
 		Transaction transaction = session.beginTransaction();
-		List<User> users = session.createQuery("from User where name = '" + name + "'").getResultList();
+		List<User> users = session.createQuery("from User where name = '" + name + "'", User.class).getResultList();
 		transaction.commit();
 		session.close();
 		return users;
@@ -81,7 +81,8 @@ public class UserDaoImpl implements UserDao {
 
 		Session session = sessionFactory.getCurrentSession();
 		Transaction transaction = session.beginTransaction();
-		List<User> users = session.createQuery("from User where surname ='" + surname + "'").getResultList();
+		List<User> users = session.createQuery("from User where surname ='" + surname + "'", User.class)
+				.getResultList();
 		transaction.commit();
 		session.close();
 		return users;

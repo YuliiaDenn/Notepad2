@@ -6,6 +6,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import entity.Address;
 import entity.User;
 import service.Notepad;
 
@@ -26,10 +27,16 @@ public class AddServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		User user = new User();
+		Address address = new Address();
+		address.setCity(request.getParameter("city"));
+		address.setStreet(request.getParameter("street"));
+		address.setBuildingNumber(request.getParameter("buildingNumber"));
+		user.setAddress(address);
 		user.setSurname(request.getParameter("surname"));
 		user.setName(request.getParameter("name"));
 		user.setSecondName(request.getParameter("secondName"));
 		user.setPhoneNumber(request.getParameter("phoneNumber"));
+		
 		note.addRecord(user);
 
 		request.setAttribute("newUser", user);

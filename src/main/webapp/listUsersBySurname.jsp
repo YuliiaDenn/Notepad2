@@ -12,7 +12,8 @@
 	<h2>All users by surname!</h2>
 
 	<form action="ListBySurnameServlet" method="post">
-		Surname: <input type="text" name="surname" /> <input type="submit" />
+		<label>Surname: <input type="text" name="surname" /></label> <label><input
+			type="submit" value="request" /></label>
 
 	</form>
 	<c:if test="${listBySurname != null}">

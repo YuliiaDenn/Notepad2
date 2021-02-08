@@ -10,18 +10,48 @@
 </head>
 <body>
 
-	<c:if test="${newUser == null}">
-		<p>Add User!</p>
+	<c:if test="${newUser == null} ">
 	</c:if>
+	<fieldset>
+		<legend> Add User!</legend>
+		<form action="AddServlet" method="post">
 
-	<form action="AddServlet" method="post">
-		<label>Surname: <input type="text" name="surname"><br />
-		</label> <label>Name: <input type="text" name="name"><br />
-		</label> <label>Second Name: <input type="text" name="secondName"><br />
-		</label> <label>Phone Number: <input type="text" name="phoneNumber"><br />
-		</label>
-		<button type="submit">Submit</button>
-	</form>
+			<table>
+				<tr>
+					<td align="right">Surname:</td>
+					<td><input type="text" name="surname"></td>
+				</tr>
+				<tr>
+					<td align="right">Name:</td>
+					<td><input type="text" name="name" /></td>
+				</tr>
+				<tr>
+					<td align="right">Second Name:</td>
+					<td><input name="secondName" /></td>
+				</tr>
+				<tr>
+					<td align="right">Phone Number:</td>
+					<td><input name="phoneNumber" /></td>
+				</tr>
+				<tr>
+					<td align="right">City:</td>
+					<td><input type="text" name="city" /></td>
+				</tr>
+				<tr>
+					<td align="right">Street:</td>
+					<td><input name="street" /></td>
+				</tr>
+				<tr>
+					<td align="right">Building number:</td>
+					<td><input name="buildingNumber" /></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><input type="submit" value="Add" /></td>
+				</tr>
+			</table>
+		</form>
+	</fieldset>
 	<c:if test="${newUser != null}">
 		<c:redirect url="/added.jsp" />
 	</c:if>

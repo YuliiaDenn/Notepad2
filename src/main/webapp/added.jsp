@@ -10,8 +10,16 @@
 </head>
 <body>
 
-	<p>User ${newUser.surname} ${newUser.name} ${newUser.secondName}
-		${newUser.phoneNumber} added!</p>
+	<p>User ${newUser.surname} ${newUser.name} ${newUser.secondName},
+		phone number: ${newUser.phoneNumber}. Address: city
+		${newUser.address.city}, street ${newUser.address.street}, building
+		number ${newUser.address.buildingNumber} added!</p>
+
+	<br />
+	<form action="/webNotebook2/AddServlet">
+		<button type="submit">Back</button>
+	</form>
+
 	<br />
 	<form action="/webNotebook2/StartServlet">
 		<button type="submit">Start page</button>

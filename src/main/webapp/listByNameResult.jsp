@@ -14,11 +14,17 @@
 	<div align="left">
 		<table border="1">
 			<tr>
-				<th></th>
-				<th>Surname</th>
-				<th>Name</th>
-				<th>Second Name</th>
-				<th>Phone Number</th>
+				<th rowspan="2"></th>
+				<th rowspan="2">Surname</th>
+				<th rowspan="2">Name</th>
+				<th rowspan="2">Second Name</th>
+				<th rowspan="2">Phone Number</th>
+				<th colspan="3">Address</th>
+			</tr>
+			<tr>
+				<th>city</th>
+				<th>street</th>
+				<th>building number</th>
 			</tr>
 			<c:forEach var="num" items="${listByName}">
 				<tr>
@@ -27,10 +33,19 @@
 					<td>${num.name}</td>
 					<td>${num.secondName}</td>
 					<td>${num.phoneNumber}</td>
+					<td>${num.address.city}</td>
+					<td>${num.address.street}</td>
+					<td>${num.address.buildingNumber}</td>
 				</tr>
 			</c:forEach>
 		</table>
 	</div>
+
+	<br />
+	<form action="/webNotebook2/ListByNameServlet">
+		<button type="submit">Back</button>
+	</form>
+
 	<br />
 	<form action="/webNotebook2/StartServlet">
 		<button type="submit">Start page</button>
